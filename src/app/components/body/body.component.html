@@ -21,25 +21,25 @@
 <h3 style="padding: 20px">Amazon Products</h3>
 <!-- Products tab & slick -->
 <div class="col-md-12">
-    <div class="row">
-      <div class="col-md-2 col-sm-6" *ngFor="let p of amazonProducts" style="width: 200px;">
-        <div class="card my-2">
-            <a href="{{p.prodUrl}}" target="_blank">
-                <img [src]="p.imageUrl" alt="{{p.title}}" class="card-img-top" style="cursor:pointer;">
-                <div class="card-header">
-                    <div class="card-title">
-                    <p>{{p.title}}</p>
-                    </div>
-                </div>
-            </a> 
-          <div class="card-body">
-            <!-- <h6>{{p.description.substr(0, 40)}} ....</h6> -->
-            <p class="lead">Older price: <strike>{{p.olderPrice}}</strike></p>
-            <p class="lead">Current price: ${{p.price}}</p>
-          </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-6" *ngFor="let p of amazonProducts" style="width: 200px;">
+      <div class="card my-2">
+          <a href="{{p.URL}}" target="_blank">
+              <img [src]="p.image" alt="{{p.title}}" class="card-img-top" style="cursor:pointer;">
+              <div class="card-header">
+                  <div class="card-title">
+                  <p>{{p.title}}</p>
+                  </div>
+              </div>
+          </a> 
+        <div class="card-body">
+          <!-- <h6>{{p.description.substr(0, 40)}} ....</h6> -->
+          <p class="lead">Older price: <strike>{{p.olderPrice}}</strike></p>
+          <p class="lead">Current price: {{p.price}}</p>
         </div>
       </div>
     </div>
+  </div>
 </div>
 
 <h3 style="padding: 20px">NewEgg Products</h3>

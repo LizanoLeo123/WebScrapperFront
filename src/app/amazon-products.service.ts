@@ -16,14 +16,16 @@ export class AmazonProductsService {
     console.log('Service Called');
   }
 
-  getAllProducts() {
-    //Bruh
-    //This is the function to fetch all products from the backend
+  getAmazonProducts() {
     return this.http.get(this.SERVER_URL + '/amazonProducts');
   }
 
   getNewEggProducts() {
     return this.http.get(this.SERVER_URL + '/newEggProducts')
+  }
+
+  getAllProducts() {
+    return this.http.get(this.SERVER_URL + '/retailProducts')
   }
 
   getCPUBenchMarks(){
@@ -32,6 +34,10 @@ export class AmazonProductsService {
 
   getGPUBenchMarks(){
     return this.http.get(this.SERVER_URL + '/benchmarksGPU')
+  }
+
+  getAllBenchmarks(){
+    return this.http.get(this.SERVER_URL + '/benchmarks')
   }
 
   getDefaultProducts() {
