@@ -1,0 +1,111 @@
+<style>
+    :host {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 14px;
+      color: #333;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 8px 0;
+    }
+</style>
+
+<h3 style="padding: 20px">Amazon Products</h3>
+<!-- Products tab & slick -->
+<div class="col-md-12">
+    <div class="row">
+      <div class="col-md-2 col-sm-6" *ngFor="let p of amazonProducts" style="width: 200px;">
+        <div class="card my-2">
+            <a href="{{p.prodUrl}}" target="_blank">
+                <img [src]="p.imageUrl" alt="{{p.title}}" class="card-img-top" style="cursor:pointer;">
+                <div class="card-header">
+                    <div class="card-title">
+                    <p>{{p.title}}</p>
+                    </div>
+                </div>
+            </a> 
+          <div class="card-body">
+            <!-- <h6>{{p.description.substr(0, 40)}} ....</h6> -->
+            <p class="lead">Older price: <strike>{{p.olderPrice}}</strike></p>
+            <p class="lead">Current price: ${{p.price}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<h3 style="padding: 20px">NewEgg Products</h3>
+<!-- Products tab & slick -->
+<div class="col-md-12">
+    <div class="row">
+      <div class="col-md-2 col-sm-6" *ngFor="let p of newEggProducts" style="width: 200px;">
+        <div class="card my-2">
+            <a href="{{p.URL}}" target="_blank">
+                <img [src]="p.image" alt="{{p.title}}" class="card-img-top" style="cursor:pointer;">
+                <div class="card-header">
+                    <div class="card-title">
+                    <p>{{p.title}}</p>
+                    </div>
+                </div>
+            </a> 
+          <div class="card-body">
+            <!-- <h6>{{p.description.substr(0, 40)}} ....</h6> -->
+            <p class="lead">Older price: <strike>{{p.olderPrice}}</strike></p>
+            <p class="lead">Current price: {{p.price}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<h3 style="padding: 20px">CPU BenchMarks</h3>
+<div class="table-container">
+  <table style="width:80%">
+    <tr>
+      <th>Processor</th>
+      <th>Score</th>
+      <th>Family</th>
+      <th>Cores/Threads</th>
+      <th>Base/Boost</th>
+      <th>TDP</th>
+    </tr>
+    <tr *ngFor="let b of cpuBenchmarks">
+      <td>{{b.name}}</td>
+      <td>{{b.GS1080p}}</td>
+      <td>{{b.family}}</td>
+      <td>{{b.coresThreads}}</td>
+      <td>{{b.baseBoost}}</td>
+      <td>{{b.TDP}}</td>
+    </tr>
+  </table>
+</div>
+
+<h3 style="padding: 20px">GPU BenchMarks</h3>
+<div class="table-container">
+  <table style="width:80%">
+    <tr>
+      <th>Graphics card</th>
+      <th>Score</th>
+      <th>Family</th>
+      <th>Base/Boost</th>
+      <th>Memory</th>
+      <th>Power</th>
+    </tr>
+    <tr *ngFor="let b of gpuBenchmarks">
+      <td>{{b.name}}</td>
+      <td>{{b.score}}</td>
+      <td>{{b.family}}</td>
+      <td>{{b.baseBoost}}</td>
+      <td>{{b.memory}}</td>
+      <td>{{b.power}}</td>
+    </tr>
+  </table>
+</div>
