@@ -8,7 +8,7 @@ import { AmazonDefaultProducts } from 'src/app/Products'
 })
 export class AmazonProductsService {
 
-  private SERVER_URL = environment.SERVER_URL;
+  private SERVER_URL = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient, private defaultProducts: AmazonDefaultProducts) { }
 
