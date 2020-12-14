@@ -2,9 +2,8 @@
   "name": "web-scrapping-front",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
-    "start": "node ./server/src/index.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
