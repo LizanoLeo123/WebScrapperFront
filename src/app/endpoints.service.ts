@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 
 export class EndpointsService {
 
-  private ruta = 'https://pc-components-scraper-backend.herokuapp.com';
+  private ruta = 'http://35.192.35.32';
 
   constructor(private http: HttpClient) {
   }

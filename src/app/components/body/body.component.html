@@ -61,26 +61,34 @@
       </div>
     </div>
 </div-->
-<h2 style="padding: 20px">CPU Benchmarks</h2>
+<h1 style="padding: 20px">GPU Benchmarks</h1>
 
-<div *ngFor="let cpu of cpuBenchmarks">
-  <h3 style="padding: 20px">{{cpu.nombre}}</h3>
+<div *ngFor="let gpu of gpuBenchmarks">
+  <h3 style="padding: 20px">{{gpu.nombre}} ({{gpu.puntuacion}})</h3>
+
   <div class="col-md-12" >
     <div class="row">
-      <div class="col-md-2 col-sm-6" style="width: 200px;" *ngFor="let x of cpu.data">
+      <div class="col-md-2 col-sm-6" style="width: 200px;" *ngFor="let x of gpu.articulos_gpus">
         <div class="card my-2">
-          <a href="" target="_blank">
-            <img [src]="x.url" alt="Imagen" class="card-img-top" style="cursor:pointer;">
+          <a [href]= "x.url_gpu" target="_blank">
+            <img [src]="x.url_img" alt="Imagen" class="card-img-top" style="cursor:pointer;">
             <div class="card-header">
               <div class="card-title">
-                <p>{{x.processor}}</p>
-                <p> GS1080p: {{x.gs1080}}, Family: {{x.family}}, Base Boost: {{x.baseBoost}},
-                  Memory: {{x.memory}},Power: {{x.power}} </p>
+                <p>{{x.nombre}}</p>
+                <p>Arquitectura: {{gpu.arquitectura}}, Cores: {{gpu.cores}}, Base Boost: {{gpu.baseBoost}}
+                TDP: {{gpu.tdp}}</p>
+
               </div>
             </div>
           </a>
-          <div class="card-body">
-            <p class="lead"> Amazon $300</p>
+          <div class="card-footer">
+            <div>
+              <img src="https://cdn.iconscout.com/icon/free/png-256/amazon-1869030-1583154.png"
+                   alt="Amazon" width="60" height="60" *ngIf="x.tienda.id == 1" class="fa-navicon">
+              <img src="https://www.userlogos.org/files/logos/jumpordie/newegg_01.png"
+                   alt="NewEgg" width="80" height="60" *ngIf="x.tienda.id == 2">
+            </div>
+
           </div>
         </div>
       </div>
@@ -88,25 +96,35 @@
   </div>
 </div>
 
-<h2 style="padding: 20px">GPU Benchmarks</h2>
+<h1 style="padding: 20px">CPU Benchmarks</h1>
+
+<br class="dropdown-divider">
+
 <div *ngFor="let cpu of cpuBenchmarks">
   <h3 style="padding: 20px">{{cpu.nombre}}</h3>
+
   <div class="col-md-12" >
     <div class="row">
-      <div class="col-md-2 col-sm-6" style="width: 200px;" *ngFor="let x of cpu.data">
+      <div class="col-md-2 col-sm-6" style="width: 200px;" *ngFor="let x of cpu.articulos_cpus">
         <div class="card my-2">
-          <a href="" target="_blank">
-            <img [src]="x.url" alt="Imagen" class="card-img-top" style="cursor:pointer;">
+          <a [href]= "x.url_cpu" target="_blank">
+            <img [src]="x.url_img" alt="Imagen" class="card-img-top" style="cursor:pointer;">
             <div class="card-header">
               <div class="card-title">
-                <p>{{x.processor}}</p>
-                <p> GS1080p: {{x.gs1080}}, Family: {{x.family}}, Base Boost: {{x.baseBoost}},
-                  Memory: {{x.memory}},Power: {{x.power}} </p>
+                <p>{{x.nombre}}</p>
+                <p>Arquitectura: {{cpu.arquitectura}}, Cores: {{cpu.cores}}, Base Boost: {{cpu.baseBoost}}
+                  TDP: {{cpu.tdp}}</p>
+
               </div>
             </div>
           </a>
-          <div class="card-body">
-            <p class="lead">Test</p>
+          <div class="card-footer">
+            <div>
+              <img src="https://cdn.iconscout.com/icon/free/png-256/amazon-1869030-1583154.png"
+                   alt="Amazon" width="60" height="60" *ngIf="x.tienda.id == 1" class="fa-navicon">
+              <img src="https://www.userlogos.org/files/logos/jumpordie/newegg_01.png"
+                   alt="NewEgg" width="80" height="60" *ngIf="x.tienda.id == 2">
+            </div>
 
           </div>
         </div>
@@ -114,6 +132,7 @@
     </div>
   </div>
 </div>
+
 
 
 

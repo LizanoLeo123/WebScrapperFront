@@ -9,15 +9,7 @@ import {EndpointsService} from "../../endpoints.service";
 })
 export class BodyComponent implements OnInit {
 
-  amazonProducts: any[] = [];
-  newEggProducts: any[] = [];
-  cpuBenchmarks: any[] = [{nombre:'Intel Core i9', data: [{processor: 'Test',gs1080: 'Test', family: 'Test', baseBoost: 'Test',
-                              memory: 'Test', power:'Test', url: 'https://images-na.ssl-images-amazon.com/images/' +
-                              'I/712kBEVHeXL._AC_SL1500_.jpg'},
-                              {processor: 'Test',gs1080: 'Test', family: 'Test', baseBoost: 'Test',
-                                memory: 'Test', power:'Test', url: 'https://images-na.ssl-images-amazon.com/images/' +
-                                  'I/712kBEVHeXL._AC_SL1500_.jpg'}
-                                  ]}];
+  cpuBenchmarks: any[] = [];
   gpuBenchmarks: any[] = [];
 
   constructor(private amazonProductService: AmazonProductsService, private endpointsService: EndpointsService) { }
@@ -67,7 +59,10 @@ export class BodyComponent implements OnInit {
     //         "\nCPU scrapping: " + CPUseconds+
     //         "\nGPU scrapping: " + GPUseconds);
     // });
-    this.getTiendas();
+    // this.getTiendas();
+    this.getGPUs();
+    this.getCPUs();
+
   }
 
   getTiendas(){
@@ -80,7 +75,7 @@ export class BodyComponent implements OnInit {
 
   getCPUs(){
     this.endpointsService.getCPUs().subscribe(result =>{
-      console.log(result);
+      this.cpuBenchmarks = result.data;
     }, error => {
       console.log('No se ha podido cargar los CPUs');
     });
@@ -88,7 +83,7 @@ export class BodyComponent implements OnInit {
 
   getGPUs(){
     this.endpointsService.getGPUs().subscribe(result =>{
-      console.log(result);
+      this.gpuBenchmarks = result.data;
     }, error => {
       console.log('No se ha podido cargar las GPUs');
     })
