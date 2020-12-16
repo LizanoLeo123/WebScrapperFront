@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 
 export class EndpointsService {
 
-  private ruta = 'http://35.192.35.32';
+  private ruta = 'http://35.232.217.113';
 
   constructor(private http: HttpClient) {
   }

@@ -82,8 +82,8 @@
           </a>
           <div class="card-body">
             <h3>Precio:</h3>
-            <h3 >${{x.historial[getLength(x.historial)].precio}}</h3>
-            <p>Última consulta: {{x.historial[getLength(x.historial)].fecha}}</p>
+            <h3 >${{x.historial[0].precio}}</h3>
+            <p>Última consulta: {{x.historial[0].fecha}}</p>
             <p *ngIf="x.historial[0].in_stock === true">Disponible</p>
             <p *ngIf="x.historial[0].in_stock === false">Agotado</p>
           </div>
@@ -126,8 +126,8 @@
           </a>
           <div class="card-body">
             <h3>Precio:</h3>
-            <h3>${{x.historial[getLength(x.historial)].precio}}</h3>
-            <p>Última consulta: {{x.historial[getLength(x.historial)].fecha}}</p>
+            <h3>${{x.historial[0].precio}}</h3>
+            <p>Última consulta: {{x.historial[0].fecha}}</p>
             <p *ngIf="x.historial[0].in_stock === true">Disponible</p>
             <p *ngIf="x.historial[0].in_stock === false">Agotado</p>
           </div>
