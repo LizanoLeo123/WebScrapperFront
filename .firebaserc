@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "operativos-scrapping-multicore"
+  },
+  "targets": {
+    "operativos-scrapping-multicore": {
+      "hosting": {
+        "WebScrappingFront": [
+          "operativos-scrapping-multicore"
+        ]
+      }
+    }
   }
 }

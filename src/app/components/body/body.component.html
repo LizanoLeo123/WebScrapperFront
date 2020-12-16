@@ -77,10 +77,17 @@
                 <p>{{x.nombre}}</p>
                 <p>Arquitectura: {{gpu.arquitectura}}, Cores: {{gpu.cores}}, Base Boost: {{gpu.baseBoost}}
                 TDP: {{gpu.tdp}}</p>
-
               </div>
             </div>
           </a>
+          <div class="card-body">
+            <h3>Precio:</h3>
+            <h3 >${{x.historial[getLength(x.historial)].precio}}</h3>
+            <p>Última consulta: {{x.historial[getLength(x.historial)].fecha}}</p>
+            <p *ngIf="x.historial[0].in_stock === true">Disponible</p>
+            <p *ngIf="x.historial[0].in_stock === false">Agotado</p>
+          </div>
+
           <div class="card-footer">
             <div>
               <img src="https://cdn.iconscout.com/icon/free/png-256/amazon-1869030-1583154.png"
@@ -114,10 +121,16 @@
                 <p>{{x.nombre}}</p>
                 <p>Arquitectura: {{cpu.arquitectura}}, Cores: {{cpu.cores}}, Base Boost: {{cpu.baseBoost}}
                   TDP: {{cpu.tdp}}</p>
-
               </div>
             </div>
           </a>
+          <div class="card-body">
+            <h3>Precio:</h3>
+            <h3>${{x.historial[getLength(x.historial)].precio}}</h3>
+            <p>Última consulta: {{x.historial[getLength(x.historial)].fecha}}</p>
+            <p *ngIf="x.historial[0].in_stock === true">Disponible</p>
+            <p *ngIf="x.historial[0].in_stock === false">Agotado</p>
+          </div>
           <div class="card-footer">
             <div>
               <img src="https://cdn.iconscout.com/icon/free/png-256/amazon-1869030-1583154.png"

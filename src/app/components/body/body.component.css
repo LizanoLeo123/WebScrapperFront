@@ -2,3 +2,11 @@
   max-width: 20%;
   height: auto;
 }
+
+.stock-color{
+  color: #1e7e34;
+}
+
+.nostock-color{
+  color: #721c24;
+}

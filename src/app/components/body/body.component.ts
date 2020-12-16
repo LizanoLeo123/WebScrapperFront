@@ -89,4 +89,8 @@ export class BodyComponent implements OnInit {
     })
   }
 
+  getLength(historial: any): number {
+    return historial.length-1;
+  }
+
 }
