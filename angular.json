@@ -151,6 +151,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "WebScrappingFront"
+    }
+  },
+  "defaultProject": "WebScrappingFront",
+  "cli": {
+    "analytics": "edbc47a2-c3dd-4dd9-8280-2673bcabc7b0"
+  }
 }
